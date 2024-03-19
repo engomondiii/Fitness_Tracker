@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Remission and Obesity Prevention</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="./images/image.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <script src="./js/main.js"></script>
+
+    <style>
+        /* Add your custom styles here */
+        .popup {
+            position: fixed;
+            bottom: 10px; /* Adjust the distance from the bottom */
+            right: 10px; /* Adjust the distance from the right */
+            background-color: #fff;
+            padding: 15px;
+            border: 2px solid black;
+            border-radius: 20px;
+            z-index: 9999;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .popup h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .popup a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #034183;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .popup a:hover {
+            background-color: #0056b3;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #034183;
+        }
+
+
+         
+
+       
+
+        /* Media query for laptops (screen width greater than or equal to 768px) */
+        @media only screen and (min-width: 768px) {
+            /* Show the navigation on laptops */
+            .navbar {
+                display: block;
+            }
+            
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="header" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #034183; color: #ffffff;">
+        <div class="logo-container" style="display: flex; align-items: center;">
+            <a href="#" class="logo" style="max-width: 180px; height: auto; margin-right: 10px;"><img src="./images/DropLogo.jpeg" alt="DROP Logo" style="width: 70px;height: 60px;"></a>
+            <div class="header-text" style="font-family: 'Arial', sans-serif;">
+              
+            </div>
+        </div>
+        <div class="header-right" style="display: flex; align-items: center;">
+            <a href="donate.html" class="donate-link" style="color: #ffffff; text-decoration: none; margin-right: 20px; font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold;">
+                <span>Donate</span>
+                <i class="fas fa-heart" style="font-size: 24px;"></i>
+            </a>
+            <div class="hamburger-icon" >
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul style="list-style-type: none; margin: 0; padding: 0;">
+                <li><a href="index.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Home</a></li>
+                <li><a href="signup.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Sign Up</a></li>
+                <li><a href="Login.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Login</a></li>
+                <li><a href="data.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Dashboard</a></li>
+
+
+                <li><a href="Fidel.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Fitness Tracker</a></li>
+                <li><a href="http://localhost:8080" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Blogs</a></li>
+                <li><a href="donate.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Donate</a></li>
+                <li><a href="careers.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Career</a></li>
+                <li><a href="#contact" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Contact</a></li>
+                <li><a href="#faq" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    
+    <!-- Popup HTML -->
+<div class="popup" id="donationPopup">
+    <span class="close" onclick="closePopup()"><i class="fas fa-times"></i></span>
+    <h2 style="font-weight: bold; color: #034183;">Help Us Fight Diabetes & Obesity!</h2>
+    <p style="font-weight: bold; font-size: 12px;">Donate to DROP Today!</p>
+    <a href="donate.html" style="font-weight: bold;">Donate Now</a>
+</div>
+
+<!-- Your existing HTML content -->
+
+<script>
+    // JavaScript to show the popup when the page loads
+    window.onload = function() {
+        document.getElementById('donationPopup').style.display = 'block';
+    };
+
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('donationPopup').style.display = 'none';
+    }
+</script>
+    
+
+    
+
+  
+
+  
+
+  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
+    <div class="container">
+         
+        <div class="row">
+
+           
+            
+      <div class="row">
+
+
+
+        <div class="pt-5 pb-5">
+            <div class="container">
+              <div class="row">
+                <div class="section-head-1 col-sm-12" style="text-align: center;">
+                  <h4 style="margin-top: -5rem;" id="portfolio"><span>Navigating Diabetes: A Guide for the Newly Diagnosed</span></h4>
+                  <p style="text-transform: none;">
+                  </p>
+                </div>
+                
+                <div class="section-head-1 col-sm-12">
+                  <div class="item"> 
+                    <h6 style="font-weight: bold; color: #034183;"></h6>
+                    <p style="text-transform: none; color: #034183;">
+                        Welcome to the beginning of your journey with diabetes. Being diagnosed with diabetes can feel overwhelming and uncertain, but rest assured, you're not alone. In this section of the DROP website, we aim to provide you with the information, resources, and support you need as you navigate life with diabetes. Whether you've been diagnosed with type 1, type 2, gestational diabetes, or another form of the condition, understanding what diabetes means for your health and well-being is essential. From learning about blood glucose management to making lifestyle changes and accessing support networks, our goal is to empower you to take charge of your health and live life to the fullest despite the challenges that diabetes may bring. Embracing your diagnosis is the first step toward achieving optimal health and thriving with diabetes, and we're here to help you every step of the way.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/Diagnosis+of+Diabetes-640w.webp" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Explanation Of Diagnosis</h6>
+                <p style="text-transform: none;">Understanding the diagnosis of diabetes is crucial for individuals and their families as it impacts daily life and long-term health outcomes. Diabetes, a metabolic disorder, is characterized by elevated blood glucose levels resulting from either insufficient insulin production or ineffective insulin utilization. There are several distinct types of diabetes, each with unique underlying causes and implications for management.
+
+                    Type 1 diabetes, often diagnosed in childhood or adolescence, arises from an autoimmune response that targets and destroys insulin-producing beta cells in the pancreas. Consequently, individuals with Type 1 diabetes require lifelong insulin therapy to regulate their blood sugar levels. Conversely, Type 2 diabetes, more prevalent in adults but increasingly diagnosed in younger populations due to lifestyle factors, primarily involves insulin resistance and diminished insulin secretion. Management strategies for Type 2 diabetes typically include lifestyle modifications, oral medications, and, in advanced stages, insulin therapy.
+                    
+                    Gestational diabetes occurs during pregnancy due to hormonal changes that induce insulin resistance. While most cases resolve after childbirth, gestational diabetes increases the risk of complications for both the mother and baby if not properly managed. It's important to recognize that diabetes affects individuals differently, influencing their treatment plans, dietary considerations, and lifestyle adjustments. By understanding the nuances of each diabetes type, individuals can actively engage in their care, make informed decisions, and work towards achieving optimal health and well-being.</p>
+            </div>
+        
+        </div>
+        
+        
+        
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/glu.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Understanding Blood Glucose Levels</h6>
+                <p style="text-transform: none;">Understanding Blood Glucose Levels: We aim to elucidate the significance of blood glucose monitoring for individuals with diabetes. Blood glucose levels represent the concentration of glucose in the bloodstream and serve as a pivotal indicator of metabolic health. Normal blood glucose levels typically range between 70 and 130 milligrams per deciliter (mg/dL) before meals, while levels below 70 mg/dL may indicate hypoglycemia and levels exceeding 180 mg/dL post-meals may signify hyperglycemia. For individuals with diabetes, maintaining blood glucose levels within target ranges is paramount for preventing complications and optimizing overall health.
+
+                    Regular monitoring of blood sugar levels enables individuals with diabetes to track fluctuations and trends, facilitating timely interventions to prevent hypo- or hyperglycemic episodes. Hypoglycemia, characterized by low blood sugar levels, can lead to symptoms such as shakiness, sweating, confusion, and in severe cases, loss of consciousness. Conversely, hyperglycemia, marked by elevated blood sugar levels, may result in increased thirst, frequent urination, fatigue, and blurred vision. Prolonged exposure to high blood glucose levels can also contribute to long-term complications such as cardiovascular disease, neuropathy, and retinopathy.
+                    
+                    By understanding and actively monitoring their blood glucose levels, individuals with diabetes can take proactive steps to maintain glycemic control, mitigate the risk of acute and chronic complications, and optimize their quality of life. Empowering individuals with the knowledge and tools to monitor and manage their blood sugar levels effectively is central to our mission of promoting holistic health and well-being in the face of diabetes.</p>
+                    
+            </div>
+            
+        </div>
+
+
+
+
+        
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/lifestyle1.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Lifestyle Changes</h6>
+               <p style="text-transform: none;">Lifestyle Changes: Managing diabetes effectively often involves adopting positive lifestyle adjustments that prioritize health and well-being. Nutrition plays a fundamental role, emphasizing a balanced diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats while minimizing processed foods and refined carbohydrates. Collaborating with a registered dietitian can aid in crafting personalized meal plans tailored to individual needs, fostering stable blood sugar levels and overall nutritional health.
+
+                Physical activity stands as a cornerstone of diabetes management, promoting improved insulin sensitivity, weight management, and cardiovascular health. Striving for at least 150 minutes of moderate-intensity aerobic exercise per week, such as brisk walking or cycling, alongside regular strength training exercises, enhances muscle strength and overall fitness. Embracing activities that resonate with personal interests and capabilities can sustain motivation and foster long-term adherence to an active lifestyle.
+                
+                Furthermore, stress management and prioritizing adequate sleep are integral components of diabetes care. Chronic stress can elevate blood sugar levels, necessitating the adoption of stress-reduction techniques such as deep breathing exercises, meditation, and mindfulness practices. Establishing consistent sleep patterns, aiming for 7-9 hours of restful sleep each night, and creating a soothing bedtime routine facilitate optimal sleep hygiene and support overall health and diabetes management. By embracing these lifestyle modifications, individuals with diabetes can proactively enhance their well-being, mitigate the risk of complications, and foster a fulfilling and balanced life.</p>
+            </div>
+            
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/treatment.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Medication and Treatment Options</h6>
+               <p style="text-transform: none;">Medication and Treatment Options: Managing diabetes effectively often involves a combination of lifestyle modifications and medication therapy tailored to individual needs. Understanding the various medication options available is crucial for optimizing blood sugar control and preventing complications.
+
+                Insulin therapy serves as a cornerstone of treatment for individuals with type 1 diabetes and may also be necessary for some individuals with type 2 diabetes who cannot achieve adequate blood sugar control through lifestyle changes or oral medications alone. Insulin therapy is administered via injections or insulin pumps and aims to mimic the body's natural insulin production, regulating blood sugar levels and preventing hyperglycemia.
+                
+                In addition to insulin therapy, several classes of oral medications are available for individuals with type 2 diabetes. These medications work by different mechanisms to lower blood sugar levels, such as increasing insulin sensitivity, reducing glucose production in the liver, and enhancing insulin secretion from the pancreas. Common oral medications include metformin, sulfonylureas, DPP-4 inhibitors, SGLT2 inhibitors, and GLP-1 receptor agonists. The choice of medication depends on factors such as individual health status, preferences, and tolerability.
+                
+                For individuals who require additional blood sugar control beyond oral medications, other injectable medications may be prescribed. These include GLP-1 receptor agonists and amylin analogs, which work to stimulate insulin production, suppress glucagon secretion, and promote satiety, leading to improved blood sugar control and potential weight loss.
+                
+                Ultimately, the selection of medication and treatment modalities depends on various factors, including the type and severity of diabetes, individual health goals, and potential side effects. Working closely with healthcare providers to develop a personalized treatment plan that addresses individual needs and preferences is essential for achieving optimal blood sugar control and preventing long-term complications associated with diabetes.</p>
+            </div>
+            
+        </div>
+
+
+
+    
+
+           
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/glucose.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Blood Glucose Monitoring</h6>
+               <p style="text-transform: none;">Blood Glucose Monitoring: For effective diabetes management, individuals rely on two primary methods: glucometers and continuous glucose monitors (CGMs). Glucometers, portable devices, analyze blood glucose levels using a small drop of blood from a finger prick. Users must maintain a clean testing area, follow device instructions meticulously, and record readings consistently to facilitate treatment adjustments. Continuous glucose monitors (CGMs), on the other hand, offer real-time blood glucose data by measuring glucose levels in interstitial fluid beneath the skin. These monitors provide comprehensive insights into glucose trends, enabling users to set personalized alerts for timely intervention in cases of hypo- or hyperglycemia.
+
+                Interpreting blood sugar readings is critical in diabetes management. Users establish target ranges with healthcare providers and learn to recognize patterns influenced by diet, physical activity, and stress. Adjustments to lifestyle and treatment plans are made accordingly. For instance, consistent high post-meal readings may prompt dietary or medication modifications, while potential hypoglycemic events during exercise may necessitate carbohydrate intake. By mastering blood glucose monitoring techniques and interpreting readings adeptly, individuals can proactively manage their diabetes and enhance overall well-being, underscoring the importance of regular communication with healthcare professionals for ongoing support and guidance.</p>
+            </div>
+            
+        </div>
+  
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/meal1.png" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Meal Planning and Nutrition</h6>
+               <p style="text-transform: none;"> Empowering individuals with diabetes to make informed dietary choices is paramount for managing blood sugar levels and promoting overall health. Meal planning resources and tools offer practical guidance in navigating dietary decisions effectively.
+
+                Carbohydrate counting serves as a fundamental aspect of diabetes meal planning, enabling individuals to monitor and manage their carbohydrate intake to regulate blood sugar levels. Tools such as carbohydrate counting apps or reference guides assist in calculating carbohydrate content in foods, facilitating more precise insulin dosing and glycemic control.
+                
+                Portion control strategies aid in maintaining balanced meals and preventing blood sugar spikes. Educating individuals on appropriate portion sizes and using visual cues, such as measuring cups or hand portions, can promote mindful eating habits and prevent overconsumption.
+                
+                Incorporating healthier food choices into daily meals is essential for supporting overall well-being. Emphasizing whole, nutrient-dense foods such as fruits, vegetables, lean proteins, and whole grains provides essential nutrients while minimizing added sugars, saturated fats, and processed foods. Encouraging variety and flexibility in meal plans ensures a diverse and enjoyable eating experience.
+                
+                By providing resources and tools for meal planning, carbohydrate counting, portion control, and healthier food choices, individuals with diabetes can enhance their dietary habits, optimize blood sugar management, and improve long-term health outcomes. Ongoing education and support from healthcare professionals and registered dietitians are integral components of successful diabetes management, fostering empowerment and confidence in making sustainable dietary changes.</p>
+            </div>
+            
+        </div>
+
+
+
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/ex1.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Physical Activity Guidelines</h6>
+               <p style="text-transform: none;"> Integrating regular physical activity into daily routines is essential for managing diabetes and improving overall health. Providing clear recommendations and tips can empower individuals to incorporate exercise effectively while minimizing risks.
+
+                Recommendations typically include engaging in at least 150 minutes of moderate-intensity aerobic activity per week, such as brisk walking, cycling, or swimming. Alternatively, individuals can aim for 75 minutes of vigorous-intensity aerobic activity spread across the week. Additionally, incorporating strength training exercises at least two days per week can enhance muscle strength and improve insulin sensitivity.
+                
+                Encouraging variety in physical activities helps maintain interest and motivation. Activities such as yoga, tai chi, and Pilates offer additional benefits, including stress reduction and improved flexibility and balance. Tailoring exercise routines to personal preferences and abilities enhances adherence and long-term sustainability.
+                
+                Staying active safely involves considerations such as monitoring blood sugar levels before and after exercise, staying hydrated, wearing appropriate footwear, and gradually increasing activity levels to prevent injury. Individuals should also be mindful of any underlying health conditions and consult with healthcare professionals before starting a new exercise program.
+                
+                By offering clear guidelines and practical tips for incorporating physical activity into daily life, individuals with diabetes can experience the benefits of improved blood sugar control, weight management, cardiovascular health, and overall well-being. Regular physical activity is a cornerstone of diabetes management and empowers individuals to take an active role in their health journey.</p>
+            </div>
+            
+        </div>
+          
+
+
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/monitor1.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Monitoring and Managing Complications</h6>
+               <p style="text-transform: none;">Diabetes can lead to various complications that affect different parts of the body, including neuropathy, retinopathy, nephropathy, and cardiovascular disease. Neuropathy refers to nerve damage, which can result in numbness, tingling, or pain, particularly in the extremities. Retinopathy affects the eyes, potentially leading to vision impairment or blindness. Nephropathy involves kidney damage, which can progress to kidney failure if left untreated. Cardiovascular disease, including heart attacks and strokes, is more prevalent among individuals with diabetes.
+
+                Preventing, monitoring, and managing these complications are essential components of diabetes care. Prevention strategies include maintaining optimal blood sugar levels through medication adherence, regular exercise, and a healthy diet. Monitoring involves regular check-ups with healthcare providers, including eye exams, kidney function tests, and cardiovascular assessments. Early detection allows for prompt intervention and may help prevent the progression of complications.
+                
+                Managing complications often requires a multifaceted approach that addresses both medical and lifestyle factors. Treatment modalities may include medications to control blood pressure, cholesterol, and blood sugar levels, as well as interventions such as laser therapy for retinopathy or dialysis for kidney failure. Lifestyle modifications, such as smoking cessation, weight management, and adherence to medication regimens, are also crucial for managing complications and improving overall health outcomes.
+                
+                Education and support are key components of managing complications effectively. Providing individuals with diabetes with comprehensive information about potential complications, preventive measures, and treatment options empowers them to take an active role in their healthcare. Encouraging regular communication with healthcare providers and promoting adherence to recommended screenings and treatments help individuals monitor and manage complications, ultimately enhancing their quality of life and reducing the risk of long-term complications associated with diabetes.</p>
+            </div>
+        
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/support1.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Support Resources</h6>
+               <p style="text-transform: none;">The DROP organization is committed to providing comprehensive support resources tailored to individuals living with diabetes. Through our platform, individuals can access a variety of avenues for support, including dedicated support groups, online forums, and educational programs.
+
+                Our support groups offer a nurturing environment where individuals can connect with others facing similar challenges associated with diabetes. These groups serve as valuable spaces for sharing experiences, offering mutual support, and exchanging practical tips for managing the condition effectively. Whether in-person or virtual, our support groups foster a sense of community and understanding among participants.
+                
+                In addition to support groups, our online forums provide a platform for individuals to engage in discussions, seek advice, and access relevant information related to diabetes management. Users can participate in conversations, read informative blogs, and stay updated on the latest developments in diabetes care and research. Our online forums serve as a hub for fostering connections and sharing insights within the diabetes community.
+                
+                Furthermore, our educational programs offer valuable resources and tools to empower individuals in their diabetes journey. These programs cover various topics, including nutrition, exercise, medication management, and emotional well-being. Through workshops, webinars, and informational materials, individuals can enhance their knowledge, develop practical skills, and gain confidence in managing their diabetes effectively.
+                
+                By providing access to support groups, online forums, educational programs, and other resources, the DROP organization aims to create a supportive ecosystem where individuals can connect, learn, and thrive in their diabetes management efforts. We are dedicated to fostering a sense of empowerment, community, and resilience among individuals living with diabetes, ensuring that they have the resources and support they need to lead healthy and fulfilling lives.</p>
+            </div>
+        
+        </div>
+
+         
+
+      </div>
+    </div>
+</div>
+
+
+  
+        
+        
+
+
+        
+
+
+        
+
+        
+        
+        
+        
+        
+        
+
+        
+
+          
+          
+
+
+<div class="pt-5 pb-5" style="background-color: #f2f2f2;">
+    <div class="container">
+         
+        <div class="pt-5 pb-5">
+            <div class="container">
+              <div class="row">
+                <div class="section-head-1 col-sm-12" style="text-align: center;">
+                  <h4 style="margin-top: -5rem;" id="portfolio"><span>Are you at risk?</span></h4>
+                  <p style="text-transform: none;">
+                    Learning your risk is the first step in taking action against type 2 diabetes. Take our 60-Second Type 2 Diabetes Risk Test today to receive actionable next steps in your health journey.
+                  </p>
+                </div>
+                
+                <div class="section-head-1 col-sm-12">
+                  <div class="item"> 
+                    <h6 style="font-weight: bold; color: #034183;">Take The Diabetes Risk Test</h6>
+                    <p style="text-transform: none;">
+                      <button onclick="startTest()" id="startButton" style="border-radius: 8px; color: white; background-color: #034183; font-weight: bold;">Start Test</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="container" id="questionsContainer" style="display: none;">
+            <div id="question" style="text-align: center; font-size: 25px; color: #034183; margin-bottom: 20px;"></div>
+            <div id="options" style="text-align: center; font-size: 20px; color: black;">
+                <!-- Options will be displayed here -->
+            </div>
+            <button onclick="nextQuestion()" id="nextButton" style="display: block; margin: 20px auto; font-size: 20px; border-radius: 8px; color: #f2f2f2; background-color: #034183; font-weight: bold;">Next</button>
+        </div>
+        
+        <script>
+            // Define your questions and options
+            const questions = [
+                "How old are you?",
+                "What is your gender?",
+                "Do you have a mother, father, sister, or brother with diabetes?",
+                "Have you ever been diagnosed with high blood pressure?",
+                "Are you physically active?",
+                "What race or ethnicity best describes you?",
+                "Tell us more about yourself?"
+            ];
+        
+            // Mapping options to questions
+            const options = [
+                ["Under 18", "18-35", "36-50", "Over 50"],
+                ["Male", "Female", "Other"],
+                ["Yes", "No"],
+                ["Yes", "No"],
+                ["Yes", "No"],
+                ["Asian", "Black", "Hispanic", "White", "Other"],
+                ["Enter your details here"]
+            ];
+        
+            let currentQuestionIndex = 0;
+            const answers = [];
+            let weightOptions, heightInput, weightInput;
+        
+            const questionsContainer = document.getElementById('questionsContainer');
+            const questionElement = document.getElementById('question');
+            const optionsElement = document.getElementById('options');
+            const nextButton = document.getElementById('nextButton');
+        
+            function startTest() {
+                startButton.style.display = 'none';
+                questionsContainer.style.display = 'block';
+                showQuestion();
+            }
+        
+            function showQuestion() {
+                if (currentQuestionIndex < questions.length) {
+                    questionElement.textContent = questions[currentQuestionIndex];
+                    optionsElement.innerHTML = '';
+                    if (currentQuestionIndex === 6) { // "Tell us more about yourself?" question
+                        const heightLabel = document.createElement('label');
+                        heightLabel.textContent = 'Height: ';
+                        optionsElement.appendChild(heightLabel);
+        
+                        heightInput = document.createElement('input');
+                        heightInput.setAttribute('type', 'text');
+                        heightInput.setAttribute('placeholder', 'Enter your Height');
+                        optionsElement.appendChild(heightInput);
+        
+                        const heightDropdown = document.createElement('select');
+                        const heightOptions = ["5'0\"", "5'1\"", "5'2\"", "5'3\"", "5'4\"", "5'5\"", "5'6\"", "5'7\"", "5'8\"", "5'9\"", "5'10\"", "5'11\"", "6'0\"", "6'1\"", "6'2\"", "6'3\"", "6'4\"", "6'5\"", "6'6\"", "6'7\"", "6'8\"", "6'9\"", "6'10\"", "6'11\"", "7'0\""];
+                        heightOptions.forEach(option => {
+                            const optionElement = document.createElement('option');
+                            optionElement.value = option;
+                            optionElement.textContent = option;
+                            heightDropdown.appendChild(optionElement);
+                        });
+        
+                        // Add event listener to update input field when selection is made
+                        heightDropdown.addEventListener('change', function() {
+                            heightInput.value = this.value;
+                        });
+        
+                        optionsElement.appendChild(heightDropdown);
+        
+                        const weightLabel = document.createElement('label');
+                        weightLabel.textContent = 'Weight: ';
+                        optionsElement.appendChild(weightLabel);
+        
+                        weightInput = document.createElement('input');
+                        weightInput.setAttribute('type', 'text');
+                        weightInput.setAttribute('placeholder', 'Enter your Weight');
+                        optionsElement.appendChild(weightInput);
+        
+                        const weightDropdown = document.createElement('select');
+                        weightOptions = ["100 lbs", "110 lbs", "120 lbs", "130 lbs", "140 lbs", "150 lbs", "160 lbs", "170 lbs", "180 lbs", "190 lbs", "200 lbs", "210 lbs", "220 lbs", "230 lbs", "240 lbs", "250 lbs", "260 lbs", "270 lbs", "280 lbs", "290 lbs", "300 lbs", "310 lbs", "320 lbs", "330 lbs", "340 lbs", "350 lbs", "360 lbs", "370 lbs", "380 lbs", "390 lbs", "400 lbs"];
+                        weightOptions.forEach(option => {
+                            const optionElement = document.createElement('option');
+                            optionElement.value = option;
+                            optionElement.textContent = option;
+                            weightDropdown.appendChild(optionElement);
+                        });
+        
+                        // Add event listener to update input field when selection is made
+                        weightDropdown.addEventListener('change', function() {
+                            weightInput.value = this.value;
+                        });
+        
+                        optionsElement.appendChild(weightDropdown);
+                    } else {
+                        options[currentQuestionIndex].forEach(option => {
+                            const radioBtn = document.createElement('input');
+                            radioBtn.setAttribute('type', 'radio');
+                            radioBtn.setAttribute('name', 'answer');
+                            radioBtn.setAttribute('value', option);
+                            radioBtn.style.display = 'inline-block';
+                            radioBtn.style.verticalAlign = 'middle';
+                            radioBtn.style.marginRight = '10px'; // Adjust margin as needed
+                            optionsElement.appendChild(radioBtn);
+                            const label = document.createElement('label');
+                            label.textContent = option;
+                            label.style.display = 'inline-block';
+                            label.style.verticalAlign = 'middle';
+                            label.style.marginRight = '20px'; // Adjust margin as needed
+                            optionsElement.appendChild(label);
+                        });
+                    }
+                } else {
+                    calculateDiabetesRisk();
+                }
+            }
+        
+            function nextQuestion() {
+                if (currentQuestionIndex === 6) { // Check if it's the height and weight question
+                    // Check if both height and weight are entered
+                    if (heightInput.value && weightInput.value) {
+                        answers.push(heightInput.value); // Push height
+                        answers.push(weightInput.value); // Push weight
+                        currentQuestionIndex++;
+                        showQuestion();
+                    } else {
+                        alert('Please enter both height and weight.');
+                    }
+                } else {
+                    const selectedOption = document.querySelector('input[name="answer"]:checked');
+                    if (selectedOption) {
+                        answers.push(selectedOption.value);
+                        currentQuestionIndex++;
+                        showQuestion();
+                    } else {
+                        alert('Please select an option.');
+                    }
+                }
+            }
+        
+            function calculateDiabetesRisk() {
+        // Implement your diabetes risk calculation algorithm here based on the answers
+        // For demonstration purposes, let's assume a simple scoring system
+        let riskScore = 0;
+        
+        // Age-based risk
+        const ageIndex = options[0].indexOf(answers[0]);
+        riskScore += ageIndex * 5; // Adjust weight as needed
+
+        // Family history
+        if (answers[2] === 'Yes') {
+            riskScore += 10; // Adjust weight as needed
+        }
+
+        // High blood pressure
+        if (answers[3] === 'Yes') {
+            riskScore += 5; // Adjust weight as needed
+        }
+
+        // Physical activity
+        if (answers[4] === 'No') {
+            riskScore += 5; // Adjust weight as needed
+        }
+
+        // Ethnicity-based risk
+        const ethnicityIndex = options[5].indexOf(answers[5]);
+        riskScore += ethnicityIndex * 3; // Adjust weight as needed
+
+        // Weight-based risk
+        const weightIndex = weightOptions.indexOf(answers[8]); // Assuming weight is at index 8
+        riskScore += weightIndex * 2; // Adjust weight as needed
+
+        // Display the risk score or category
+        const resultContainer = document.getElementById('questionsContainer');
+        resultContainer.innerHTML = `<div style="text-align: center; font-size: 30px; color: #034183; margin-bottom: 20px;">Your Diabetes Risk Score is: ${riskScore}% While this is just an estimate, it's essential to be proactive. Schedule a check-up with your doctor to discuss your risk factors and develop a plan for a healthier lifestyle.</div>`;
+        // You can also categorize the risk based on certain thresholds if needed
+        // Example: if (riskScore >= 20) { resultContainer.innerHTML += 'High Risk'; }
+
+        // Additional logic can be added here for further guidance based on the risk score
+    }
+        </script>
+        
+      </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer" style="width: 1380px;">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+
+                 
+              <div class="col-lg-3 col-md-6 footer-links">
+                  <h4>Useful Links</h4>
+                  <ul>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="signup.html">Sign Up</a></li>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="Login.html">Login</a></li>
+
+
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
+                  </ul>
+              </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>DROP Dashboard</h4>
+                    <ul>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">User Profiles</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Health Metrics Tracking</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Nutrition and Meal Planning Tools</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Educational Resources</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Community Support</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Appointment Scheduling</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Goal Setting and Tracking</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Integration with Research and Clinical Trials</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Assessment Tools</a></li>
+                    </ul>
+                </div>
+
+               
+
+                 
+
+                <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
+                    <h4>Contact Us</h4>
+                    <p style="text-transform: none;">
+                      Diabetes Remission And Obesity Prevention(DROP)<br>
+                      P.O. Box 1900-00502<br>
+                      Karen, Nairobi<br>
+                      Kenya<br>
+                        <strong>Phone:</strong> +254721496316<br>
+                        <strong>Email:</strong> info.dropke@gmail.com<br>
+                    </p>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
+                        <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
+                        <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
+                        <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-newsletter">
+                    <h4>Subscription</h4>
+                    <p style="text-transform: none;">Stay Informed, Stay Empowered: Subscribe to Our Newsletter!Join our community committed to diabetes remission and obesity prevention.</p>
+                    <p style="text-transform: none;">By subscribing to our newsletter, you'll receive regular updates on our latest programs, research findings, healthy living tips, and inspiring stories from individuals like you who are making positive changes in their lives.</p>
+                    <form action="" method="post">
+                        <input type="email" name="email"><input type="submit"  value="Subscribe">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
+                Copyright &copy; 2024 Diabetes Remission and Obesity Prevention – DROP organization Website. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+</body>
+</html>

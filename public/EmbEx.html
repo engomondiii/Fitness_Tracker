@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Remission and Obesity Prevention</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="./images/image.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <script src="./js/main.js"></script>
+
+    <style>
+        /* Add your custom styles here */
+        .popup {
+            position: fixed;
+            bottom: 10px; /* Adjust the distance from the bottom */
+            right: 10px; /* Adjust the distance from the right */
+            background-color: #fff;
+            padding: 15px;
+            border: 2px solid black;
+            border-radius: 20px;
+            z-index: 9999;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .popup h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .popup a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #034183;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .popup a:hover {
+            background-color: #0056b3;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #034183;
+        }
+
+
+         
+
+       
+
+        /* Media query for laptops (screen width greater than or equal to 768px) */
+        @media only screen and (min-width: 768px) {
+            /* Show the navigation on laptops */
+            .navbar {
+                display: block;
+            }
+            
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="header" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #034183; color: #ffffff;">
+        <div class="logo-container" style="display: flex; align-items: center;">
+            <a href="#" class="logo" style="max-width: 180px; height: auto; margin-right: 10px;"><img src="./images/DropLogo.jpeg" alt="DROP Logo" style="width: 70px;height: 60px;"></a>
+            <div class="header-text" style="font-family: 'Arial', sans-serif;">
+              
+            </div>
+        </div>
+        <div class="header-right" style="display: flex; align-items: center;">
+            <a href="donate.html" class="donate-link" style="color: #ffffff; text-decoration: none; margin-right: 20px; font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold;">
+                <span>Donate</span>
+                <i class="fas fa-heart" style="font-size: 24px;"></i>
+            </a>
+            <div class="hamburger-icon" >
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul style="list-style-type: none; margin: 0; padding: 0;">
+                <li><a href="index.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Home</a></li>
+                <li><a href="signup.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Sign Up</a></li>
+                <li><a href="Login.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Login</a></li>
+                <li><a href="data.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Dashboard</a></li>
+
+
+                <li><a href="Fidel.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Fitness Tracker</a></li>
+                <li><a href="http://localhost:8080" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Blogs</a></li>
+                <li><a href="donate.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Donate</a></li>
+                <li><a href="careers.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Career</a></li>
+                <li><a href="#contact" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Contact</a></li>
+                <li><a href="#faq" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    
+    <!-- Popup HTML -->
+<div class="popup" id="donationPopup">
+    <span class="close" onclick="closePopup()"><i class="fas fa-times"></i></span>
+    <h2 style="font-weight: bold; color: #034183;">Help Us Fight Diabetes & Obesity!</h2>
+    <p style="font-weight: bold; font-size: 12px;">Donate to DROP Today!</p>
+    <a href="donate.html" style="font-weight: bold;">Donate Now</a>
+</div>
+
+<!-- Your existing HTML content -->
+
+<script>
+    // JavaScript to show the popup when the page loads
+    window.onload = function() {
+        document.getElementById('donationPopup').style.display = 'block';
+    };
+
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('donationPopup').style.display = 'none';
+    }
+</script>
+    
+
+    
+
+  
+
+  
+
+  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
+    <div class="container">
+         
+        <div class="row">
+
+           
+            
+      <div class="row">
+
+
+
+        <div class="pt-5 pb-5">
+            <div class="container">
+              <div class="row">
+                <div class="section-head-1 col-sm-12" style="text-align: center;">
+                  <h4 style="margin-top: -5rem;" id="portfolio"><span>Embracing Exercise: Your Path to Better Health</span></h4>
+                  <p style="text-transform: none;">
+                  </p>
+                </div>
+                
+                <div class="section-head-1 col-sm-12">
+                  <div class="item"> 
+                    <h6 style="font-weight: bold; color: #034183;"></h6>
+                    <p style="text-transform: none; color: #034183;">
+                        Welcome to the "Embracing Exercise" page, where we explore the transformative power of physical activity in managing diabetes and enhancing overall well-being. Here, you'll discover valuable insights, practical tips, and personalized guidance to help you incorporate regular exercise into your daily routine. Whether you're aiming to improve insulin sensitivity, manage weight, or boost cardiovascular health, embracing exercise is a pivotal step towards achieving your health goals. Join us on this journey as we delve into the benefits of physical activity and empower you to lead a more active, fulfilling life.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/benefits.jfif" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Benefits of Exercise</h6>
+                <p style="text-transform: none;">Regular exercise offers a multitude of benefits for individuals managing diabetes and seeking to optimize their health. Engaging in physical activity promotes improved insulin sensitivity, allowing cells to more effectively utilize glucose and thereby helping to regulate blood sugar levels. Moreover, consistent exercise contributes to weight management by burning calories and building lean muscle mass, which can help prevent obesity and reduce the risk of associated complications. Beyond glycemic control and weight management, regular physical activity strengthens the cardiovascular system, lowering blood pressure and cholesterol levels while enhancing circulation and heart health. Importantly, exercise also supports mental well-being by reducing stress, anxiety, and depression, fostering a positive outlook and greater overall quality of life. By embracing exercise as a cornerstone of diabetes management, individuals can unlock a myriad of health benefits and empower themselves to lead active, fulfilling lives.</p>
+            </div>
+        
+        </div>
+        
+        
+        
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/typeex.jfif" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Types of Exercise</h6>
+                <p style="text-transform: none;">Incorporating a diverse range of physical activities into one's routine is key to reaping the full benefits of exercise in diabetes management. Aerobic exercises, including brisk walking, jogging, swimming, and cycling, are excellent choices for improving cardiovascular health, enhancing endurance, and burning calories. These activities also help lower blood sugar levels by increasing the body's sensitivity to insulin, thereby promoting better glycemic control. Additionally, resistance training, which involves using weights or resistance bands to strengthen muscles, offers unique advantages for individuals with diabetes. Resistance exercises help build muscle mass, which can improve metabolism and contribute to better blood sugar regulation. Moreover, muscle tissue burns more calories than fat tissue, supporting weight management and overall metabolic health. By incorporating a combination of aerobic and resistance exercises into their routine, individuals with diabetes can enjoy a comprehensive approach to physical activity that addresses various aspects of their health and well-being.</p>
+            </div>
+            
+        </div>
+
+
+
+
+        
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/guid.jfif" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Exercise Guidelines</h6>
+                <p style="text-transform: none;">Establishing clear exercise guidelines tailored to individuals with diabetes is essential for promoting safe and effective physical activity. It is recommended to start with moderate-intensity aerobic exercises, such as brisk walking, for at least 150 minutes per week, spread across most days. For those seeking additional health benefits, increasing the duration or intensity of aerobic activities can be beneficial. Additionally, integrating resistance training exercises into the routine, targeting major muscle groups, is advised at least twice a week. However, it's crucial to emphasize the importance of individualization and consulting healthcare professionals before starting any new exercise regimen, especially for those with pre-existing health conditions. Starting slowly and gradually increasing the intensity and duration of physical activity allows individuals to build strength, endurance, and confidence while minimizing the risk of injury or complications. Regular monitoring of blood sugar levels and adjustments to medication or insulin doses may be necessary to accommodate changes in physical activity levels effectively.</p>
+            </div>
+            
+        </div>
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/safety.jfif" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Safety Considerations</h6>
+                <p style="text-transform: none;">Ensuring the safety of individuals with diabetes during physical activity is paramount to their overall well-being. It is crucial to emphasize the importance of monitoring blood sugar levels before, during, and after exercise to prevent the risk of hypoglycemia or hyperglycemia. Encouraging individuals to stay hydrated by drinking water before, during, and after physical activity helps maintain optimal hydration levels and supports overall performance. Additionally, wearing appropriate footwear and comfortable clothing can help prevent injuries and enhance comfort during exercise sessions. Educating individuals about the signs and symptoms of hypoglycemia, such as dizziness, shakiness, confusion, and sweating, empowers them to take prompt action and manage their blood sugar levels effectively. Similarly, being aware of signs of hyperglycemia, such as increased thirst, frequent urination, and fatigue, is essential for timely intervention and prevention of complications. By promoting these safety considerations and providing guidance on managing blood sugar levels and recognizing warning signs, individuals with diabetes can engage in physical activity confidently and reap the numerous health benefits associated with exercise.</p>
+            </div>
+            
+        </div>
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/incorp.jfif" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Incorporating Exercise into Daily Routine</h6>
+                <p style="text-transform: none;">Incorporating exercise into daily routines is pivotal for fostering an active lifestyle among individuals engaged with the DROP organization's wellness initiatives. Encouraging members to schedule regular workout sessions at convenient times throughout their day helps establish consistency and accountability in their exercise regimen. It's imperative to highlight the significance of discovering enjoyable physical activities that resonate with individual interests and preferences, increasing the likelihood of sustained engagement over time. Moreover, promoting the utilization of familial, social, and community support systems can provide invaluable motivation, accountability, and encouragement along the journey toward enhanced physical well-being. By integrating exercise seamlessly into daily routines and leveraging robust support networks, participants can surmount barriers and obstacles, ultimately making physical activity an indispensable component of their holistic health endeavors.</p>
+            </div>
+            
+        </div>
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/proff.jfif" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Professional Guidance</h6>
+                <p style="text-transform: none;">Encouraging individuals to seek professional guidance from healthcare providers or certified exercise professionals is fundamental to the DROP organization's commitment to fostering safe and effective exercise practices. Collaborating with knowledgeable professionals allows participants to receive personalized recommendations and exercise prescriptions that align with their unique health needs, medical considerations, and fitness aspirations. By consulting with experts in the field, individuals can gain valuable insights into appropriate exercise modalities, intensity levels, and duration, ensuring optimal outcomes while minimizing the risk of injury or adverse health effects. Emphasizing the importance of professional guidance underscores the organization's dedication to prioritizing participant safety, promoting evidence-based approaches, and empowering individuals to embark on their wellness journey with confidence and competence.</p>
+            </div>
+            
+        </div>
+
+
+
+
+
+
+       
+
+
+
+           
+
+         
+
+
+
+          
+
+
+         
+
+      </div>
+    </div>
+</div>
+
+
+  
+        
+        
+
+
+        
+
+
+        
+
+        
+        
+        
+        
+        
+        
+
+        
+
+          
+          
+
+
+<div class="pt-5 pb-5" style="background-color: #f2f2f2;">
+    <div class="container">
+         
+        <div class="pt-5 pb-5">
+            <div class="container">
+              <div class="row">
+                <div class="section-head-1 col-sm-12" style="text-align: center;">
+                  <h4 style="margin-top: -5rem;" id="portfolio"><span>Are you at risk?</span></h4>
+                  <p style="text-transform: none;">
+                    Learning your risk is the first step in taking action against type 2 diabetes. Take our 60-Second Type 2 Diabetes Risk Test today to receive actionable next steps in your health journey.
+                  </p>
+                </div>
+                
+                <div class="section-head-1 col-sm-12">
+                  <div class="item"> 
+                    <h6 style="font-weight: bold; color: #034183;">Take The Diabetes Risk Test</h6>
+                    <p style="text-transform: none;">
+                      <button onclick="startTest()" id="startButton" style="border-radius: 8px; color: white; background-color: #034183; font-weight: bold;">Start Test</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="container" id="questionsContainer" style="display: none;">
+            <div id="question" style="text-align: center; font-size: 25px; color: #034183; margin-bottom: 20px;"></div>
+            <div id="options" style="text-align: center; font-size: 20px; color: black;">
+                <!-- Options will be displayed here -->
+            </div>
+            <button onclick="nextQuestion()" id="nextButton" style="display: block; margin: 20px auto; font-size: 20px; border-radius: 8px; color: #f2f2f2; background-color: #034183; font-weight: bold;">Next</button>
+        </div>
+        
+        <script>
+            // Define your questions and options
+            const questions = [
+                "How old are you?",
+                "What is your gender?",
+                "Do you have a mother, father, sister, or brother with diabetes?",
+                "Have you ever been diagnosed with high blood pressure?",
+                "Are you physically active?",
+                "What race or ethnicity best describes you?",
+                "Tell us more about yourself?"
+            ];
+        
+            // Mapping options to questions
+            const options = [
+                ["Under 18", "18-35", "36-50", "Over 50"],
+                ["Male", "Female", "Other"],
+                ["Yes", "No"],
+                ["Yes", "No"],
+                ["Yes", "No"],
+                ["Asian", "Black", "Hispanic", "White", "Other"],
+                ["Enter your details here"]
+            ];
+        
+            let currentQuestionIndex = 0;
+            const answers = [];
+            let weightOptions, heightInput, weightInput;
+        
+            const questionsContainer = document.getElementById('questionsContainer');
+            const questionElement = document.getElementById('question');
+            const optionsElement = document.getElementById('options');
+            const nextButton = document.getElementById('nextButton');
+        
+            function startTest() {
+                startButton.style.display = 'none';
+                questionsContainer.style.display = 'block';
+                showQuestion();
+            }
+        
+            function showQuestion() {
+                if (currentQuestionIndex < questions.length) {
+                    questionElement.textContent = questions[currentQuestionIndex];
+                    optionsElement.innerHTML = '';
+                    if (currentQuestionIndex === 6) { // "Tell us more about yourself?" question
+                        const heightLabel = document.createElement('label');
+                        heightLabel.textContent = 'Height: ';
+                        optionsElement.appendChild(heightLabel);
+        
+                        heightInput = document.createElement('input');
+                        heightInput.setAttribute('type', 'text');
+                        heightInput.setAttribute('placeholder', 'Enter your Height');
+                        optionsElement.appendChild(heightInput);
+        
+                        const heightDropdown = document.createElement('select');
+                        const heightOptions = ["5'0\"", "5'1\"", "5'2\"", "5'3\"", "5'4\"", "5'5\"", "5'6\"", "5'7\"", "5'8\"", "5'9\"", "5'10\"", "5'11\"", "6'0\"", "6'1\"", "6'2\"", "6'3\"", "6'4\"", "6'5\"", "6'6\"", "6'7\"", "6'8\"", "6'9\"", "6'10\"", "6'11\"", "7'0\""];
+                        heightOptions.forEach(option => {
+                            const optionElement = document.createElement('option');
+                            optionElement.value = option;
+                            optionElement.textContent = option;
+                            heightDropdown.appendChild(optionElement);
+                        });
+        
+                        // Add event listener to update input field when selection is made
+                        heightDropdown.addEventListener('change', function() {
+                            heightInput.value = this.value;
+                        });
+        
+                        optionsElement.appendChild(heightDropdown);
+        
+                        const weightLabel = document.createElement('label');
+                        weightLabel.textContent = 'Weight: ';
+                        optionsElement.appendChild(weightLabel);
+        
+                        weightInput = document.createElement('input');
+                        weightInput.setAttribute('type', 'text');
+                        weightInput.setAttribute('placeholder', 'Enter your Weight');
+                        optionsElement.appendChild(weightInput);
+        
+                        const weightDropdown = document.createElement('select');
+                        weightOptions = ["100 lbs", "110 lbs", "120 lbs", "130 lbs", "140 lbs", "150 lbs", "160 lbs", "170 lbs", "180 lbs", "190 lbs", "200 lbs", "210 lbs", "220 lbs", "230 lbs", "240 lbs", "250 lbs", "260 lbs", "270 lbs", "280 lbs", "290 lbs", "300 lbs", "310 lbs", "320 lbs", "330 lbs", "340 lbs", "350 lbs", "360 lbs", "370 lbs", "380 lbs", "390 lbs", "400 lbs"];
+                        weightOptions.forEach(option => {
+                            const optionElement = document.createElement('option');
+                            optionElement.value = option;
+                            optionElement.textContent = option;
+                            weightDropdown.appendChild(optionElement);
+                        });
+        
+                        // Add event listener to update input field when selection is made
+                        weightDropdown.addEventListener('change', function() {
+                            weightInput.value = this.value;
+                        });
+        
+                        optionsElement.appendChild(weightDropdown);
+                    } else {
+                        options[currentQuestionIndex].forEach(option => {
+                            const radioBtn = document.createElement('input');
+                            radioBtn.setAttribute('type', 'radio');
+                            radioBtn.setAttribute('name', 'answer');
+                            radioBtn.setAttribute('value', option);
+                            radioBtn.style.display = 'inline-block';
+                            radioBtn.style.verticalAlign = 'middle';
+                            radioBtn.style.marginRight = '10px'; // Adjust margin as needed
+                            optionsElement.appendChild(radioBtn);
+                            const label = document.createElement('label');
+                            label.textContent = option;
+                            label.style.display = 'inline-block';
+                            label.style.verticalAlign = 'middle';
+                            label.style.marginRight = '20px'; // Adjust margin as needed
+                            optionsElement.appendChild(label);
+                        });
+                    }
+                } else {
+                    calculateDiabetesRisk();
+                }
+            }
+        
+            function nextQuestion() {
+                if (currentQuestionIndex === 6) { // Check if it's the height and weight question
+                    // Check if both height and weight are entered
+                    if (heightInput.value && weightInput.value) {
+                        answers.push(heightInput.value); // Push height
+                        answers.push(weightInput.value); // Push weight
+                        currentQuestionIndex++;
+                        showQuestion();
+                    } else {
+                        alert('Please enter both height and weight.');
+                    }
+                } else {
+                    const selectedOption = document.querySelector('input[name="answer"]:checked');
+                    if (selectedOption) {
+                        answers.push(selectedOption.value);
+                        currentQuestionIndex++;
+                        showQuestion();
+                    } else {
+                        alert('Please select an option.');
+                    }
+                }
+            }
+        
+            function calculateDiabetesRisk() {
+        // Implement your diabetes risk calculation algorithm here based on the answers
+        // For demonstration purposes, let's assume a simple scoring system
+        let riskScore = 0;
+        
+        // Age-based risk
+        const ageIndex = options[0].indexOf(answers[0]);
+        riskScore += ageIndex * 5; // Adjust weight as needed
+
+        // Family history
+        if (answers[2] === 'Yes') {
+            riskScore += 10; // Adjust weight as needed
+        }
+
+        // High blood pressure
+        if (answers[3] === 'Yes') {
+            riskScore += 5; // Adjust weight as needed
+        }
+
+        // Physical activity
+        if (answers[4] === 'No') {
+            riskScore += 5; // Adjust weight as needed
+        }
+
+        // Ethnicity-based risk
+        const ethnicityIndex = options[5].indexOf(answers[5]);
+        riskScore += ethnicityIndex * 3; // Adjust weight as needed
+
+        // Weight-based risk
+        const weightIndex = weightOptions.indexOf(answers[8]); // Assuming weight is at index 8
+        riskScore += weightIndex * 2; // Adjust weight as needed
+
+        // Display the risk score or category
+        const resultContainer = document.getElementById('questionsContainer');
+        resultContainer.innerHTML = `<div style="text-align: center; font-size: 30px; color: #034183; margin-bottom: 20px;">Your Diabetes Risk Score is: ${riskScore}% While this is just an estimate, it's essential to be proactive. Schedule a check-up with your doctor to discuss your risk factors and develop a plan for a healthier lifestyle.</div>`;
+        // You can also categorize the risk based on certain thresholds if needed
+        // Example: if (riskScore >= 20) { resultContainer.innerHTML += 'High Risk'; }
+
+        // Additional logic can be added here for further guidance based on the risk score
+    }
+        </script>
+        
+      </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer" style="width: 1380px;">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+
+                 
+              <div class="col-lg-3 col-md-6 footer-links">
+                  <h4>Useful Links</h4>
+                  <ul>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="signup.html">Sign Up</a></li>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="Login.html">Login</a></li>
+
+
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
+                  </ul>
+              </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>DROP Dashboard</h4>
+                    <ul>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">User Profiles</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Health Metrics Tracking</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Nutrition and Meal Planning Tools</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Educational Resources</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Community Support</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Appointment Scheduling</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Goal Setting and Tracking</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Integration with Research and Clinical Trials</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Assessment Tools</a></li>
+                    </ul>
+                </div>
+
+               
+
+                 
+
+                <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
+                    <h4>Contact Us</h4>
+                    <p style="text-transform: none;">
+                      Diabetes Remission And Obesity Prevention(DROP)<br>
+                      P.O. Box 1900-00502<br>
+                      Karen, Nairobi<br>
+                      Kenya<br>
+                        <strong>Phone:</strong> +254721496316<br>
+                        <strong>Email:</strong> info.dropke@gmail.com<br>
+                    </p>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
+                        <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
+                        <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
+                        <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-newsletter">
+                    <h4>Subscription</h4>
+                    <p style="text-transform: none;">Stay Informed, Stay Empowered: Subscribe to Our Newsletter!Join our community committed to diabetes remission and obesity prevention.</p>
+                    <p style="text-transform: none;">By subscribing to our newsletter, you'll receive regular updates on our latest programs, research findings, healthy living tips, and inspiring stories from individuals like you who are making positive changes in their lives.</p>
+                    <form action="" method="post">
+                        <input type="email" name="email"><input type="submit"  value="Subscribe">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
+                Copyright &copy; 2024 Diabetes Remission and Obesity Prevention – DROP organization Website. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+</body>
+</html>

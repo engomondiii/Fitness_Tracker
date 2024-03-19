@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Company Website</title>
+    <link rel="stylesheet" href="./css/careers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="./images/image.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <script src="./js/main.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container" style="display: flex; align-items: center;">
+            <a href="#" class="logo" style="max-width: 180px; height: auto; margin-right: 10px;"><img src="./images/DropLogo.jpeg" alt="DROP Logo" style="width: 70px;height: 60px;"></a>
+            <div class="header-text" style="font-family: 'Arial', sans-serif;">
+              
+            </div>
+        </div>        <div class="fas fa-bars"></div>
+        <nav class="navbar">
+            <ul style="list-style-type: none; margin: 0; padding: 0;">
+                <li><a href="index.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;"  >Home</a></li>
+                <li><a href="signup.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Sign Up</a></li>
+                <li><a href="Login.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Login</a></li>
+                <li><a href="data.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Dashboard</a></li>
+
+
+                <li><a href="Fidel.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Fitness Tracker</a></li>
+                <li><a href="http://localhost:8080" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Blogs</a></li>
+                <li><a href="donate.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Donate</a></li>
+                <li><a href="careers.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Career</a></li>
+                <li><a href="#contact" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Contact</a></li>
+                <li><a href="#faq" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
+        <h2>Home / Careers</h2>
+    </section>
+
+    <section id="career-heading" class="career-heading">
+        <h1 class="heading">Career</h1>
+        <p>Job Opening at DROP organization. Apply Now!</p>
+    </section>
+    <div class="career">
+        <div class="career-form">
+            <form action="./careers.php" method="POST" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Name" class="career-form-txt" required>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact number" maxlength="10" class="career-form-phone">
+                <input type="email" name="email" placeholder="Email" class="career-form-email" required>
+                <div class="radio-class">
+                    <h2 class="name">Apply For Which Post?</h2>
+                <label class="radio">
+                  <input class="radio-one" type="radio" checked="checked" name="status" value="Web Designer">
+                  <span class="checkmark"></span>
+                  Web Designer
+                </label>
+                <label class="radio">
+                  <input class="radio-two" type="radio" name="status" value="Web Developer">
+                  <span class="checkmark"></span>
+                  Web Developer
+                </label>
+                <label class="radio">
+                  <input class="radio-three" type="radio" name="status" value="Mobile App Designer">
+                  <span class="checkmark"></span>
+                  Mobile App Designer
+                </label>
+                <label class="radio">
+                    <input class="radio-four" type="radio" name="status" value="Mobile App Developer">
+                    <span class="checkmark"></span>
+                    Mobile App Developer
+                  </label>
+                <label class="radio">
+                  <input class="radio-five" type="radio"  name="status" value="Digital Marketer">
+                  <span class="checkmark"></span>
+                  Digital Marketer
+                </label>
+                </div>
+                <input type="number" id="experience" name="experience" required placeholder="Years of Experience" class="career-form-experience">
+                <textarea placeholder="Other Details" name="details" class="career-form-txtarea" required></textarea>
+                <div class="file">
+                    <h2 class="name">Upload Your Resume</h2>
+                    <input class="upload" type="file" name="fileToUpload" accept=".doc,.docx,.pdf"><br><br><br>
+                </div>
+                <input type="submit" value="Submit" name="submit" class="career-form-btn">
+            </form>
+        </div>
+    </div>
+
+    <div class="footer" style="width: 1380px;">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+  
+  
+                     
+                  <div class="col-lg-3 col-md-6 footer-links">
+                      <h4>Useful Links</h4>
+                      <ul>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="signup.html">Sign Up</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="Login.html">Login</a></li>
+  
+  
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
+                          <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
+                      </ul>
+                  </div>
+  
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>DROP Dashboard</h4>
+                        <ul>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#">User Profiles</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#">Health Metrics Tracking</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#">Nutrition and Meal Planning Tools</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#">Educational Resources</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#">Community Support</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#">Appointment Scheduling</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#">Goal Setting and Tracking</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#">Integration with Research and Clinical Trials</a></li>
+                            <li><i class="ion-ios-arrow-forward"></i> <a href="#">Assessment Tools</a></li>
+                        </ul>
+                    </div>
+  
+                   
+  
+                     
+  
+                    <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
+                        <h4>Contact Us</h4>
+                        <p style="text-transform: none;">
+                          Diabetes Remission And Obesity Prevention(DROP)<br>
+                          P.O. Box 1900-00502<br>
+                          Karen, Nairobi<br>
+                          Kenya<br>
+                            <strong>Phone:</strong> +254721496316<br>
+                            <strong>Email:</strong> info.dropke@gmail.com<br>
+                        </p>
+  
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
+                            <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
+                            <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
+                            <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
+                            <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
+                        </div>
+  
+                    </div>
+  
+                    <div class="col-lg-3 col-md-6 footer-newsletter">
+                        <h4>Subscription</h4>
+                        <p style="text-transform: none;">Stay Informed, Stay Empowered: Subscribe to Our Newsletter!Join our community committed to diabetes remission and obesity prevention.</p>
+                        <p style="text-transform: none;">By subscribing to our newsletter, you'll receive regular updates on our latest programs, research findings, healthy living tips, and inspiring stories from individuals like you who are making positive changes in their lives.</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit"  value="Subscribe">
+                        </form>
+                    </div>
+  
+                </div>
+            </div>
+        </div>
+  
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
+                    Copyright &copy; 2024 Diabetes Remission and Obesity Prevention – DROP organization Website. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+  </body>
+  </html>
+  

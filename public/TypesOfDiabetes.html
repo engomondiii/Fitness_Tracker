@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Remission and Obesity Prevention</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="./images/image.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <script src="./js/main.js"></script>
+
+    <style>
+        /* Add your custom styles here */
+        .popup {
+            position: fixed;
+            bottom: 10px; /* Adjust the distance from the bottom */
+            right: 10px; /* Adjust the distance from the right */
+            background-color: #fff;
+            padding: 15px;
+            border: 2px solid black;
+            border-radius: 20px;
+            z-index: 9999;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .popup h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .popup a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #034183;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .popup a:hover {
+            background-color: #0056b3;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #034183;
+        }
+
+
+         
+
+       
+
+        /* Media query for laptops (screen width greater than or equal to 768px) */
+        @media only screen and (min-width: 768px) {
+            /* Show the navigation on laptops */
+            .navbar {
+                display: block;
+            }
+            
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="header" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #034183; color: #ffffff;">
+        <div class="logo-container" style="display: flex; align-items: center;">
+            <a href="#" class="logo" style="max-width: 180px; height: auto; margin-right: 10px;"><img src="./images/DropLogo.jpeg" alt="DROP Logo" style="width: 70px;height: 60px;"></a>
+            <div class="header-text" style="font-family: 'Arial', sans-serif;">
+              
+            </div>
+        </div>
+        <div class="header-right" style="display: flex; align-items: center;">
+            <a href="donate.html" class="donate-link" style="color: #ffffff; text-decoration: none; margin-right: 20px; font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold;">
+                <span>Donate</span>
+                <i class="fas fa-heart" style="font-size: 24px;"></i>
+            </a>
+            <div class="hamburger-icon" >
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul style="list-style-type: none; margin: 0; padding: 0;">
+                <li><a href="index.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Home</a></li>
+                <li><a href="signup.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Sign Up</a></li>
+                <li><a href="Login.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Login</a></li>
+                <li><a href="data.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Dashboard</a></li>
+
+
+                <li><a href="Fidel.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Fitness Tracker</a></li>
+                <li><a href="http://localhost:8080" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Blogs</a></li>
+                <li><a href="donate.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Donate</a></li>
+                <li><a href="careers.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Career</a></li>
+                <li><a href="#contact" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Contact</a></li>
+                <li><a href="#faq" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    
+    <!-- Popup HTML -->
+<div class="popup" id="donationPopup">
+    <span class="close" onclick="closePopup()"><i class="fas fa-times"></i></span>
+    <h2 style="font-weight: bold; color: #034183;">Help Us Fight Diabetes & Obesity!</h2>
+    <p style="font-weight: bold; font-size: 12px;">Donate to DROP Today!</p>
+    <a href="donate.html" style="font-weight: bold;">Donate Now</a>
+</div>
+
+<!-- Your existing HTML content -->
+
+<script>
+    // JavaScript to show the popup when the page loads
+    window.onload = function() {
+        document.getElementById('donationPopup').style.display = 'block';
+    };
+
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('donationPopup').style.display = 'none';
+    }
+</script>
+    
+
+    
+
+  
+
+  
+
+  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
+    <div class="container">
+         
+        <div class="row">
+
+           
+            
+      <div class="row">
+
+
+
+        <div class="pt-5 pb-5">
+            <div class="container">
+              <div class="row">
+                <div class="section-head-1 col-sm-12" style="text-align: center;">
+                  <h4 style="margin-top: -5rem;" id="portfolio"><span>Understanding Diabetes Types: A Comprehensive Guide</span></h4>
+                  <p style="text-transform: none;">
+                  </p>
+                </div>
+                
+                <div class="section-head-1 col-sm-12">
+                  <div class="item"> 
+                    <h6 style="font-weight: bold; color: #034183;"></h6>
+                    <p style="text-transform: none; color: #034183;">
+                        Navigating the landscape of diabetes requires an understanding of its various types and their unique characteristics. From Type 1 diabetes, typically diagnosed in childhood, to the more prevalent Type 2 diabetes, and the transient yet impactful gestational diabetes, each form presents its own set of challenges and management strategies. Beyond these well-known types, lesser-known variations such as monogenic diabetes offer further insight into the diverse nature of this metabolic disorder. In this section, we delve into the intricacies of each diabetes type, empowering individuals with knowledge to navigate their diabetes journey with confidence and clarity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/sym.png" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Type 1 Diabetes</h6>
+                <p style="text-transform: none;"> Type 1 diabetes, a condition characterized by the autoimmune destruction of insulin-producing beta cells in the pancreas, necessitates a comprehensive understanding of its unique features and management requirements. Primarily diagnosed during childhood or adolescence, Type 1 diabetes manifests due to the body's immune system mistakenly attacking and destroying these crucial cells responsible for insulin production. Consequently, individuals with Type 1 diabetes face the lifelong necessity of insulin therapy to regulate blood sugar levels effectively. Our detailed exploration of Type 1 diabetes encompasses insights into its autoimmune nature, highlighting the mechanisms underlying beta cell destruction and the resulting insulin deficiency.
+
+                    In addition to discussing the autoimmune basis of Type 1 diabetes, our resources delve into various aspects essential for managing this condition. Visitors to the DROP website can find comprehensive information regarding symptoms that may indicate the onset of Type 1 diabetes, facilitating early recognition and timely intervention. Furthermore, our platform elucidates the diagnostic criteria used to identify Type 1 diabetes, ensuring individuals are equipped with the knowledge to navigate the diagnostic process effectively. Treatment options, including insulin therapy regimens and emerging technologies, are also explored to empower individuals with informed choices regarding their diabetes management.
+                    
+                    Beyond medical interventions, lifestyle management strategies play a pivotal role in supporting individuals with Type 1 diabetes in achieving optimal health outcomes. From dietary considerations to physical activity recommendations and psychosocial support, our resources offer practical insights into integrating diabetes management into daily life. By providing detailed insights into Type 1 diabetes, encompassing its autoimmune etiology, clinical manifestations, diagnostic criteria, and comprehensive management strategies, the DROP website aims to empower individuals with the knowledge and resources necessary to navigate their Type 1 diabetes journey with confidence and resilience. </p>
+            </div>
+        
+        </div>
+        
+        
+        
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/type2.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Type 2 Diabetes</h6>
+                <p style="text-transform: none;">As the most prevalent form of diabetes, Type 2 diabetes warrants a comprehensive understanding of its underlying mechanisms, risk factors, symptoms, management strategies, and potential complications. Within this section of the DROP website, users will discover a wealth of information aimed at empowering them to effectively manage and navigate their Type 2 diabetes journey.
+
+                    Our resources delve into the fundamental aspects of Type 2 diabetes, elucidating its association with insulin resistance and impaired insulin production. Visitors to the site will gain insight into the risk factors contributing to the development of Type 2 diabetes, including obesity, physical inactivity, genetic predisposition, and lifestyle factors. By understanding these risk factors, individuals can take proactive steps to mitigate their risk and promote overall health.
+                    
+                    Furthermore, our platform offers comprehensive discussions on the symptoms and diagnostic criteria used to identify Type 2 diabetes, enabling individuals to recognize potential warning signs and seek timely medical evaluation. Treatment options, ranging from lifestyle modifications such as dietary changes and increased physical activity to oral medications and insulin therapy, are explored in detail. Our goal is to provide individuals with a holistic understanding of the available treatment modalities, empowering them to make informed decisions in collaboration with their healthcare providers.
+                    
+                    Additionally, the DROP website sheds light on the potential complications associated with Type 2 diabetes, including cardiovascular disease, neuropathy, nephropathy, and retinopathy. By raising awareness of these complications, individuals can take proactive measures to prevent or manage them effectively, enhancing their overall quality of life and reducing the risk of long-term complications.
+                    
+                    Through comprehensive information and practical insights, the DROP website equips individuals with the knowledge and resources necessary to navigate the complexities of Type 2 diabetes with confidence and resilience.</p>
+                    
+            </div>
+            
+        </div>
+
+
+
+
+        
+        <div class="col-lg-4 col-sm-6">
+            <a href="" style="text-decoration: none; color: inherit;">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/ges.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Gestational Diabetes</h6>
+                <p style="text-transform: none;">Within the DROP platform, we dedicate a section to gestational diabetes, a condition that manifests during pregnancy and requires specialized attention and care. Users accessing this subsection will gain comprehensive insights into the nuances of gestational diabetes, empowering them to navigate this unique aspect of their pregnancy journey with confidence and understanding.
+
+                    Our resources delve into the underlying causes and risk factors associated with gestational diabetes, shedding light on factors such as maternal age, obesity, family history of diabetes, and ethnic background. By understanding these risk factors, individuals can take proactive steps to mitigate their risk and optimize maternal and fetal health outcomes.
+                    
+                    Visitors to the DROP website will find detailed information on the screening procedures used to diagnose gestational diabetes, including oral glucose tolerance tests and other diagnostic methods. Early detection and diagnosis are crucial for implementing timely interventions and mitigating potential complications for both the mother and baby.
+                    
+                    Furthermore, our platform offers practical guidance on management strategies during pregnancy, including dietary modifications, physical activity recommendations, blood glucose monitoring, and potential medical interventions. By adopting these management strategies, individuals can optimize blood sugar control and minimize the risk of adverse outcomes during pregnancy.
+                    
+                    Importantly, our resources also explore the potential implications of gestational diabetes for future health, both for the mother and her offspring. By raising awareness of these implications, individuals are empowered to make informed decisions regarding postpartum care, lifestyle modifications, and ongoing monitoring for diabetes risk in the future.</p>
+            </div>
+            </a>
+        </div>
+
+
+
+
+
+
+       
+
+
+
+           
+
+         
+
+
+
+          
+
+
+         
+
+      </div>
+    </div>
+</div>
+
+
+  
+        
+        
+
+
+        
+
+
+        
+
+        
+        
+        
+        
+        
+        
+
+        
+
+          
+          
+
+
+<div class="pt-5 pb-5" style="background-color: #f2f2f2;">
+    <div class="container">
+         
+        <div class="pt-5 pb-5">
+            <div class="container">
+              <div class="row">
+                <div class="section-head-1 col-sm-12" style="text-align: center;">
+                  <h4 style="margin-top: -5rem;" id="portfolio"><span>Are you at risk?</span></h4>
+                  <p style="text-transform: none;">
+                    Learning your risk is the first step in taking action against type 2 diabetes. Take our 60-Second Type 2 Diabetes Risk Test today to receive actionable next steps in your health journey.
+                  </p>
+                </div>
+                
+                <div class="section-head-1 col-sm-12">
+                  <div class="item"> 
+                    <h6 style="font-weight: bold; color: #034183;">Take The Diabetes Risk Test</h6>
+                    <p style="text-transform: none;">
+                      <button onclick="startTest()" id="startButton" style="border-radius: 8px; color: white; background-color: #034183; font-weight: bold;">Start Test</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="container" id="questionsContainer" style="display: none;">
+            <div id="question" style="text-align: center; font-size: 25px; color: #034183; margin-bottom: 20px;"></div>
+            <div id="options" style="text-align: center; font-size: 20px; color: black;">
+                <!-- Options will be displayed here -->
+            </div>
+            <button onclick="nextQuestion()" id="nextButton" style="display: block; margin: 20px auto; font-size: 20px; border-radius: 8px; color: #f2f2f2; background-color: #034183; font-weight: bold;">Next</button>
+        </div>
+        
+        <script>
+            // Define your questions and options
+            const questions = [
+                "How old are you?",
+                "What is your gender?",
+                "Do you have a mother, father, sister, or brother with diabetes?",
+                "Have you ever been diagnosed with high blood pressure?",
+                "Are you physically active?",
+                "What race or ethnicity best describes you?",
+                "Tell us more about yourself?"
+            ];
+        
+            // Mapping options to questions
+            const options = [
+                ["Under 18", "18-35", "36-50", "Over 50"],
+                ["Male", "Female", "Other"],
+                ["Yes", "No"],
+                ["Yes", "No"],
+                ["Yes", "No"],
+                ["Asian", "Black", "Hispanic", "White", "Other"],
+                ["Enter your details here"]
+            ];
+        
+            let currentQuestionIndex = 0;
+            const answers = [];
+            let weightOptions, heightInput, weightInput;
+        
+            const questionsContainer = document.getElementById('questionsContainer');
+            const questionElement = document.getElementById('question');
+            const optionsElement = document.getElementById('options');
+            const nextButton = document.getElementById('nextButton');
+        
+            function startTest() {
+                startButton.style.display = 'none';
+                questionsContainer.style.display = 'block';
+                showQuestion();
+            }
+        
+            function showQuestion() {
+                if (currentQuestionIndex < questions.length) {
+                    questionElement.textContent = questions[currentQuestionIndex];
+                    optionsElement.innerHTML = '';
+                    if (currentQuestionIndex === 6) { // "Tell us more about yourself?" question
+                        const heightLabel = document.createElement('label');
+                        heightLabel.textContent = 'Height: ';
+                        optionsElement.appendChild(heightLabel);
+        
+                        heightInput = document.createElement('input');
+                        heightInput.setAttribute('type', 'text');
+                        heightInput.setAttribute('placeholder', 'Enter your Height');
+                        optionsElement.appendChild(heightInput);
+        
+                        const heightDropdown = document.createElement('select');
+                        const heightOptions = ["5'0\"", "5'1\"", "5'2\"", "5'3\"", "5'4\"", "5'5\"", "5'6\"", "5'7\"", "5'8\"", "5'9\"", "5'10\"", "5'11\"", "6'0\"", "6'1\"", "6'2\"", "6'3\"", "6'4\"", "6'5\"", "6'6\"", "6'7\"", "6'8\"", "6'9\"", "6'10\"", "6'11\"", "7'0\""];
+                        heightOptions.forEach(option => {
+                            const optionElement = document.createElement('option');
+                            optionElement.value = option;
+                            optionElement.textContent = option;
+                            heightDropdown.appendChild(optionElement);
+                        });
+        
+                        // Add event listener to update input field when selection is made
+                        heightDropdown.addEventListener('change', function() {
+                            heightInput.value = this.value;
+                        });
+        
+                        optionsElement.appendChild(heightDropdown);
+        
+                        const weightLabel = document.createElement('label');
+                        weightLabel.textContent = 'Weight: ';
+                        optionsElement.appendChild(weightLabel);
+        
+                        weightInput = document.createElement('input');
+                        weightInput.setAttribute('type', 'text');
+                        weightInput.setAttribute('placeholder', 'Enter your Weight');
+                        optionsElement.appendChild(weightInput);
+        
+                        const weightDropdown = document.createElement('select');
+                        weightOptions = ["100 lbs", "110 lbs", "120 lbs", "130 lbs", "140 lbs", "150 lbs", "160 lbs", "170 lbs", "180 lbs", "190 lbs", "200 lbs", "210 lbs", "220 lbs", "230 lbs", "240 lbs", "250 lbs", "260 lbs", "270 lbs", "280 lbs", "290 lbs", "300 lbs", "310 lbs", "320 lbs", "330 lbs", "340 lbs", "350 lbs", "360 lbs", "370 lbs", "380 lbs", "390 lbs", "400 lbs"];
+                        weightOptions.forEach(option => {
+                            const optionElement = document.createElement('option');
+                            optionElement.value = option;
+                            optionElement.textContent = option;
+                            weightDropdown.appendChild(optionElement);
+                        });
+        
+                        // Add event listener to update input field when selection is made
+                        weightDropdown.addEventListener('change', function() {
+                            weightInput.value = this.value;
+                        });
+        
+                        optionsElement.appendChild(weightDropdown);
+                    } else {
+                        options[currentQuestionIndex].forEach(option => {
+                            const radioBtn = document.createElement('input');
+                            radioBtn.setAttribute('type', 'radio');
+                            radioBtn.setAttribute('name', 'answer');
+                            radioBtn.setAttribute('value', option);
+                            radioBtn.style.display = 'inline-block';
+                            radioBtn.style.verticalAlign = 'middle';
+                            radioBtn.style.marginRight = '10px'; // Adjust margin as needed
+                            optionsElement.appendChild(radioBtn);
+                            const label = document.createElement('label');
+                            label.textContent = option;
+                            label.style.display = 'inline-block';
+                            label.style.verticalAlign = 'middle';
+                            label.style.marginRight = '20px'; // Adjust margin as needed
+                            optionsElement.appendChild(label);
+                        });
+                    }
+                } else {
+                    calculateDiabetesRisk();
+                }
+            }
+        
+            function nextQuestion() {
+                if (currentQuestionIndex === 6) { // Check if it's the height and weight question
+                    // Check if both height and weight are entered
+                    if (heightInput.value && weightInput.value) {
+                        answers.push(heightInput.value); // Push height
+                        answers.push(weightInput.value); // Push weight
+                        currentQuestionIndex++;
+                        showQuestion();
+                    } else {
+                        alert('Please enter both height and weight.');
+                    }
+                } else {
+                    const selectedOption = document.querySelector('input[name="answer"]:checked');
+                    if (selectedOption) {
+                        answers.push(selectedOption.value);
+                        currentQuestionIndex++;
+                        showQuestion();
+                    } else {
+                        alert('Please select an option.');
+                    }
+                }
+            }
+        
+            function calculateDiabetesRisk() {
+        // Implement your diabetes risk calculation algorithm here based on the answers
+        // For demonstration purposes, let's assume a simple scoring system
+        let riskScore = 0;
+        
+        // Age-based risk
+        const ageIndex = options[0].indexOf(answers[0]);
+        riskScore += ageIndex * 5; // Adjust weight as needed
+
+        // Family history
+        if (answers[2] === 'Yes') {
+            riskScore += 10; // Adjust weight as needed
+        }
+
+        // High blood pressure
+        if (answers[3] === 'Yes') {
+            riskScore += 5; // Adjust weight as needed
+        }
+
+        // Physical activity
+        if (answers[4] === 'No') {
+            riskScore += 5; // Adjust weight as needed
+        }
+
+        // Ethnicity-based risk
+        const ethnicityIndex = options[5].indexOf(answers[5]);
+        riskScore += ethnicityIndex * 3; // Adjust weight as needed
+
+        // Weight-based risk
+        const weightIndex = weightOptions.indexOf(answers[8]); // Assuming weight is at index 8
+        riskScore += weightIndex * 2; // Adjust weight as needed
+
+        // Display the risk score or category
+        const resultContainer = document.getElementById('questionsContainer');
+        resultContainer.innerHTML = `<div style="text-align: center; font-size: 30px; color: #034183; margin-bottom: 20px;">Your Diabetes Risk Score is: ${riskScore}% While this is just an estimate, it's essential to be proactive. Schedule a check-up with your doctor to discuss your risk factors and develop a plan for a healthier lifestyle.</div>`;
+        // You can also categorize the risk based on certain thresholds if needed
+        // Example: if (riskScore >= 20) { resultContainer.innerHTML += 'High Risk'; }
+
+        // Additional logic can be added here for further guidance based on the risk score
+    }
+        </script>
+        
+      </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer" style="width: 1380px;">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+
+                 
+              <div class="col-lg-3 col-md-6 footer-links">
+                  <h4>Useful Links</h4>
+                  <ul>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="signup.html">Sign Up</a></li>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="Login.html">Login</a></li>
+
+
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
+                  </ul>
+              </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>DROP Dashboard</h4>
+                    <ul>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">User Profiles</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Health Metrics Tracking</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Nutrition and Meal Planning Tools</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Educational Resources</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Community Support</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Appointment Scheduling</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Goal Setting and Tracking</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Integration with Research and Clinical Trials</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Assessment Tools</a></li>
+                    </ul>
+                </div>
+
+               
+
+                 
+
+                <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
+                    <h4>Contact Us</h4>
+                    <p style="text-transform: none;">
+                      Diabetes Remission And Obesity Prevention(DROP)<br>
+                      P.O. Box 1900-00502<br>
+                      Karen, Nairobi<br>
+                      Kenya<br>
+                        <strong>Phone:</strong> +254721496316<br>
+                        <strong>Email:</strong> info.dropke@gmail.com<br>
+                    </p>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
+                        <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
+                        <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
+                        <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-newsletter">
+                    <h4>Subscription</h4>
+                    <p style="text-transform: none;">Stay Informed, Stay Empowered: Subscribe to Our Newsletter!Join our community committed to diabetes remission and obesity prevention.</p>
+                    <p style="text-transform: none;">By subscribing to our newsletter, you'll receive regular updates on our latest programs, research findings, healthy living tips, and inspiring stories from individuals like you who are making positive changes in their lives.</p>
+                    <form action="" method="post">
+                        <input type="email" name="email"><input type="submit"  value="Subscribe">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
+                Copyright &copy; 2024 Diabetes Remission and Obesity Prevention – DROP organization Website. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+</body>
+</html>

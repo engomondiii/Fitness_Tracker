@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Remission and Obesity Prevention</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" href="./images/image.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <script src="./js/main.js"></script>
+
+    <style>
+        /* Add your custom styles here */
+        .popup {
+            position: fixed;
+            bottom: 10px; /* Adjust the distance from the bottom */
+            right: 10px; /* Adjust the distance from the right */
+            background-color: #fff;
+            padding: 15px;
+            border: 2px solid black;
+            border-radius: 20px;
+            z-index: 9999;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .popup h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .popup a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #034183;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .popup a:hover {
+            background-color: #0056b3;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: #034183;
+        }
+
+
+         
+
+       
+
+        /* Media query for laptops (screen width greater than or equal to 768px) */
+        @media only screen and (min-width: 768px) {
+            /* Show the navigation on laptops */
+            .navbar {
+                display: block;
+            }
+            
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="header" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #034183; color: #ffffff;">
+        <div class="logo-container" style="display: flex; align-items: center;">
+            <a href="#" class="logo" style="max-width: 180px; height: auto; margin-right: 10px;"><img src="./images/DropLogo.jpeg" alt="DROP Logo" style="width: 70px;height: 60px;"></a>
+            <div class="header-text" style="font-family: 'Arial', sans-serif;">
+              
+            </div>
+        </div>
+        <div class="header-right" style="display: flex; align-items: center;">
+            <a href="donate.html" class="donate-link" style="color: #ffffff; text-decoration: none; margin-right: 20px; font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold;">
+                <span>Donate</span>
+                <i class="fas fa-heart" style="font-size: 24px;"></i>
+            </a>
+            <div class="hamburger-icon" >
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul style="list-style-type: none; margin: 0; padding: 0;">
+                <li><a href="index.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Home</a></li>
+                <li><a href="signup.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Sign Up</a></li>
+                <li><a href="Login.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Login</a></li>
+                <li><a href="data.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Dashboard</a></li>
+
+
+                <li><a href="Fidel.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Fitness Tracker</a></li>
+                <li><a href="http://localhost:8080" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Blogs</a></li>
+                <li><a href="donate.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Donate</a></li>
+                <li><a href="careers.html" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Career</a></li>
+                <li><a href="#contact" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">Contact</a></li>
+                <li><a href="#faq" style="color: #ffffff; text-decoration: none; font-family: 'Arial', sans-serif; font-size: 16px;">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    
+    <!-- Popup HTML -->
+<div class="popup" id="donationPopup">
+    <span class="close" onclick="closePopup()"><i class="fas fa-times"></i></span>
+    <h2 style="font-weight: bold; color: #034183;">Help Us Fight Diabetes & Obesity!</h2>
+    <p style="font-weight: bold; font-size: 12px;">Donate to DROP Today!</p>
+    <a href="donate.html" style="font-weight: bold;">Donate Now</a>
+</div>
+
+<!-- Your existing HTML content -->
+
+<script>
+    // JavaScript to show the popup when the page loads
+    window.onload = function() {
+        document.getElementById('donationPopup').style.display = 'block';
+    };
+
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('donationPopup').style.display = 'none';
+    }
+</script>
+    
+
+    
+
+  
+
+  
+
+  <div class="pt-5 pb-5" style="background-color: #f2f2f2;">
+    <div class="container">
+         
+        <div class="row">
+
+           
+            
+      <div class="row">
+
+
+
+        <div class="pt-5 pb-5">
+            <div class="container">
+              <div class="row">
+                <div class="section-head-1 col-sm-12" style="text-align: center;">
+                  <h4 style="margin-top: -5rem;" id="portfolio"><span>Understanding Prediabetes: What You Need to Know</span></h4>
+                  <p style="text-transform: none;">
+                  </p>
+                </div>
+                
+                <div class="section-head-1 col-sm-12">
+                  <div class="item"> 
+                    <h6 style="font-weight: bold; color: #034183;"></h6>
+                    <p style="text-transform: none; color: #034183;">
+                        Prediabetes serves as a critical juncture in the realm of metabolic health, signaling a warning of potential diabetes ahead. Defined by blood glucose levels higher than normal but not yet meeting the criteria for type 2 diabetes, prediabetes emerges as a harbinger of future health challenges. While often asymptomatic, its presence underscores the urgency for proactive measures to prevent the progression to full-blown diabetes and mitigate associated risks. Through informed understanding, lifestyle modifications, and proactive healthcare, individuals can navigate the path towards improved metabolic well-being and avert the onset of diabetes. This introductory exploration delves into the essentials of prediabetes, shedding light on its definition, risk factors, diagnostic criteria, preventive strategies, and the crucial role of early intervention in safeguarding long-term health.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/defination.webp" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Defination</h6>
+                <p style="text-transform: none;">Prediabetes represents a metabolic condition wherein blood glucose levels exceed normal ranges but do not yet reach the threshold for a diagnosis of type 2 diabetes mellitus. It serves as a transitional phase between normal glucose metabolism and diabetes, presenting a crucial opportunity for intervention to prevent or delay the onset of full-blown diabetes. Unlike diabetes, individuals with prediabetes still maintain the capacity for insulin production and glucose regulation, albeit with diminished efficiency. While often asymptomatic, prediabetes signifies an increased risk for developing diabetes, cardiovascular disease, and other metabolic complications. Distinguishing features between prediabetes and diabetes lie in the magnitude of blood glucose elevation, with prediabetes representing an intermediary stage characterized by impaired glucose tolerance or impaired fasting glucose. Understanding this distinction is pivotal for early detection, intervention, and the implementation of lifestyle modifications aimed at halting disease progression and promoting long-term health.</p>
+            </div>
+        
+        </div>
+        
+        
+
+
+
+        
+        <div class="col-lg-4 col-sm-6">
+            <a href="" style="text-decoration: none; color: inherit;">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/symptoms1.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Symptoms</h6>
+                <p style="text-transform: none;"> Prediabetes often manifests without conspicuous signs, making it challenging to detect solely based on symptoms. Nevertheless, some individuals may experience subtle indicators that warrant attention. Increased thirst, stemming from the body's attempt to flush out excess glucose through urine, may signal elevated blood sugar levels. Concurrently, frequent urination occurs as the kidneys work overtime to expel surplus glucose from the bloodstream, leading to increased urine production. Fatigue, a pervasive sensation of tiredness and lethargy, may accompany prediabetes due to inefficient glucose utilization by cells for energy production. Additionally, blurred vision may ensue as fluctuating blood sugar levels affect the lens's ability to focus properly. While these symptoms may overlap with other conditions, their presence, particularly in conjunction, underscores the importance of monitoring blood glucose levels and seeking medical evaluation to assess metabolic health and mitigate future risks.</p>
+            </div>
+            </a>
+        </div>
+
+
+
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/factors.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Risk Factors</h6>
+                <p style="text-transform: none;"> Prediabetes arises from a complex interplay of genetic, lifestyle, and environmental factors, predisposing individuals to impaired glucose regulation and heightened diabetes susceptibility. Among the primary risk factors, overweight or obesity stands as a significant contributor, as excess adipose tissue disrupts insulin sensitivity and glucose metabolism. Sedentary lifestyles further exacerbate this risk, as physical inactivity impedes glucose utilization and exacerbates insulin resistance. Family history of diabetes emerges as a potent predictor, underscoring the hereditary component of metabolic disorders and the role of genetic predisposition. Age serves as a notable risk factor, with advancing years correlating with declining pancreatic function and diminished insulin secretion. Ethnicity also plays a pivotal role, with individuals of African American, Hispanic, Native American, Asian American, and Pacific Islander descent exhibiting heightened predilection for prediabetes and diabetes, attributed to genetic susceptibility and sociocultural determinants.</p>
+                    
+            </div>
+            
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/diagnosis1.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Diagnosis</h6>
+                 <p style="text-transform: none;">Prediabetes diagnosis relies on objective assessment of blood glucose levels through standardized laboratory tests, facilitating early detection and intervention to mitigate future health risks. The fasting plasma glucose (FPG) test serves as a cornerstone diagnostic tool, requiring individuals to abstain from food and drink (except water) for at least eight hours prior to blood collection. A blood sample obtained in the morning provides a baseline measurement of fasting blood glucose levels, with values falling between 100 and 125 milligrams per deciliter (mg/dL) indicative of prediabetes.
+
+                    Alternatively, the oral glucose tolerance test (OGTT) entails ingesting a concentrated glucose solution after fasting overnight, followed by periodic blood glucose measurements over a span of two hours to assess the body's ability to metabolize glucose. Prediabetes is diagnosed if blood glucose levels fall within the range of 140 to 199 mg/dL during the two-hour testing period.
+                    
+                    Moreover, the hemoglobin A1C test offers a comprehensive evaluation of long-term blood glucose control by measuring the percentage of hemoglobin molecules glycated by glucose over a span of two to three months. Prediabetes is typically diagnosed when hemoglobin A1C levels range from 5.7% to 6.4%.</p>                    
+            </div>
+            
+        </div>
+
+
+       
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/complications.png" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Complications</h6>
+                <p style="text-transform: none;">Untreated prediabetes poses a myriad of health risks, underscoring the imperative for proactive management and intervention to avert the cascade of metabolic derangements and associated complications. Foremost among these risks is the heightened susceptibility to progressing to type 2 diabetes mellitus, whereby prolonged exposure to elevated blood glucose levels culminates in pancreatic beta-cell dysfunction and insulin resistance. Left unchecked, the transition from prediabetes to diabetes perpetuates a vicious cycle of hyperglycemia, further exacerbating metabolic dysregulation and increasing the risk of microvascular and macrovascular complications.
+
+                    Additionally, prediabetes significantly amplifies the risk of cardiovascular disease, encompassing a spectrum of conditions ranging from coronary artery disease to myocardial infarction and stroke. Elevated blood glucose levels promote endothelial dysfunction, oxidative stress, and inflammation, fostering the development and progression of atherosclerosis and thrombotic events. The confluence of dyslipidemia, hypertension, and insulin resistance further compounds cardiovascular risk, necessitating comprehensive risk stratification and cardiovascular risk reduction strategies.</p>                    
+            </div>
+            
+        </div>
+
+
+           
+
+        <div class="col-lg-4 col-sm-6">
+
+            <div class="item"> 
+                <span class="icon feature_box_col_one">
+                    <img src="./images/pre.jpg" alt="Understanding Diabetes Image" style="max-width: 90%; height: auto;">
+                </span>
+                <h6 style="font-weight: bold; color: #034183;">Prevention</h6>
+               <p style="text-transform: none;"> Empowering individuals with prediabetes to enact meaningful lifestyle modifications serves as a cornerstone in forestalling the onset and progression of type 2 diabetes mellitus, epitomizing a paradigm shift towards proactive health promotion and chronic disease prevention. Central to this endeavor is the cultivation of a holistic approach encompassing dietary modifications, regular physical activity, weight management, smoking cessation, and prudent alcohol consumption.
+
+                Maintaining a healthy weight constitutes a linchpin in the prevention of type 2 diabetes, underpinning improvements in insulin sensitivity, glucose metabolism, and adipose tissue function. Adopting a balanced diet replete with nutrient-dense foods, including fruits, vegetables, whole grains, lean proteins, and healthy fats, fosters glycemic control, mitigates inflammation, and attenuates cardiovascular risk. Embracing dietary diversity, portion control, and mindful eating habits empowers individuals to cultivate sustainable dietary patterns conducive to metabolic health and overall well-being. Regular physical activity serves as a potent modulator of metabolic homeostasis, enhancing insulin sensitivity, promoting glucose uptake, and mitigating adiposity.</p>                    
+            </div>
+            
+        </div>
+
+
+
+          
+
+
+         
+
+      </div>
+    </div>
+</div>
+
+
+  
+        
+        
+
+
+        
+
+
+        
+
+        
+        
+        
+        
+        
+        
+
+        
+
+          
+          
+
+
+<div class="pt-5 pb-5" style="background-color: #f2f2f2;">
+    <div class="container">
+         
+        <div class="pt-5 pb-5">
+            <div class="container">
+              <div class="row">
+                <div class="section-head-1 col-sm-12" style="text-align: center;">
+                  <h4 style="margin-top: -5rem;" id="portfolio"><span>Are you at risk?</span></h4>
+                  <p style="text-transform: none;">
+                    Learning your risk is the first step in taking action against type 2 diabetes. Take our 60-Second Type 2 Diabetes Risk Test today to receive actionable next steps in your health journey.
+                  </p>
+                </div>
+                
+                <div class="section-head-1 col-sm-12">
+                  <div class="item"> 
+                    <h6 style="font-weight: bold; color: #034183;">Take The Diabetes Risk Test</h6>
+                    <p style="text-transform: none;">
+                      <button onclick="startTest()" id="startButton" style="border-radius: 8px; color: white; background-color: #034183; font-weight: bold;">Start Test</button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="container" id="questionsContainer" style="display: none;">
+            <div id="question" style="text-align: center; font-size: 25px; color: #034183; margin-bottom: 20px;"></div>
+            <div id="options" style="text-align: center; font-size: 20px; color: black;">
+                <!-- Options will be displayed here -->
+            </div>
+            <button onclick="nextQuestion()" id="nextButton" style="display: block; margin: 20px auto; font-size: 20px; border-radius: 8px; color: #f2f2f2; background-color: #034183; font-weight: bold;">Next</button>
+        </div>
+        
+        <script>
+            // Define your questions and options
+            const questions = [
+                "How old are you?",
+                "What is your gender?",
+                "Do you have a mother, father, sister, or brother with diabetes?",
+                "Have you ever been diagnosed with high blood pressure?",
+                "Are you physically active?",
+                "What race or ethnicity best describes you?",
+                "Tell us more about yourself?"
+            ];
+        
+            // Mapping options to questions
+            const options = [
+                ["Under 18", "18-35", "36-50", "Over 50"],
+                ["Male", "Female", "Other"],
+                ["Yes", "No"],
+                ["Yes", "No"],
+                ["Yes", "No"],
+                ["Asian", "Black", "Hispanic", "White", "Other"],
+                ["Enter your details here"]
+            ];
+        
+            let currentQuestionIndex = 0;
+            const answers = [];
+            let weightOptions, heightInput, weightInput;
+        
+            const questionsContainer = document.getElementById('questionsContainer');
+            const questionElement = document.getElementById('question');
+            const optionsElement = document.getElementById('options');
+            const nextButton = document.getElementById('nextButton');
+        
+            function startTest() {
+                startButton.style.display = 'none';
+                questionsContainer.style.display = 'block';
+                showQuestion();
+            }
+        
+            function showQuestion() {
+                if (currentQuestionIndex < questions.length) {
+                    questionElement.textContent = questions[currentQuestionIndex];
+                    optionsElement.innerHTML = '';
+                    if (currentQuestionIndex === 6) { // "Tell us more about yourself?" question
+                        const heightLabel = document.createElement('label');
+                        heightLabel.textContent = 'Height: ';
+                        optionsElement.appendChild(heightLabel);
+        
+                        heightInput = document.createElement('input');
+                        heightInput.setAttribute('type', 'text');
+                        heightInput.setAttribute('placeholder', 'Enter your Height');
+                        optionsElement.appendChild(heightInput);
+        
+                        const heightDropdown = document.createElement('select');
+                        const heightOptions = ["5'0\"", "5'1\"", "5'2\"", "5'3\"", "5'4\"", "5'5\"", "5'6\"", "5'7\"", "5'8\"", "5'9\"", "5'10\"", "5'11\"", "6'0\"", "6'1\"", "6'2\"", "6'3\"", "6'4\"", "6'5\"", "6'6\"", "6'7\"", "6'8\"", "6'9\"", "6'10\"", "6'11\"", "7'0\""];
+                        heightOptions.forEach(option => {
+                            const optionElement = document.createElement('option');
+                            optionElement.value = option;
+                            optionElement.textContent = option;
+                            heightDropdown.appendChild(optionElement);
+                        });
+        
+                        // Add event listener to update input field when selection is made
+                        heightDropdown.addEventListener('change', function() {
+                            heightInput.value = this.value;
+                        });
+        
+                        optionsElement.appendChild(heightDropdown);
+        
+                        const weightLabel = document.createElement('label');
+                        weightLabel.textContent = 'Weight: ';
+                        optionsElement.appendChild(weightLabel);
+        
+                        weightInput = document.createElement('input');
+                        weightInput.setAttribute('type', 'text');
+                        weightInput.setAttribute('placeholder', 'Enter your Weight');
+                        optionsElement.appendChild(weightInput);
+        
+                        const weightDropdown = document.createElement('select');
+                        weightOptions = ["100 lbs", "110 lbs", "120 lbs", "130 lbs", "140 lbs", "150 lbs", "160 lbs", "170 lbs", "180 lbs", "190 lbs", "200 lbs", "210 lbs", "220 lbs", "230 lbs", "240 lbs", "250 lbs", "260 lbs", "270 lbs", "280 lbs", "290 lbs", "300 lbs", "310 lbs", "320 lbs", "330 lbs", "340 lbs", "350 lbs", "360 lbs", "370 lbs", "380 lbs", "390 lbs", "400 lbs"];
+                        weightOptions.forEach(option => {
+                            const optionElement = document.createElement('option');
+                            optionElement.value = option;
+                            optionElement.textContent = option;
+                            weightDropdown.appendChild(optionElement);
+                        });
+        
+                        // Add event listener to update input field when selection is made
+                        weightDropdown.addEventListener('change', function() {
+                            weightInput.value = this.value;
+                        });
+        
+                        optionsElement.appendChild(weightDropdown);
+                    } else {
+                        options[currentQuestionIndex].forEach(option => {
+                            const radioBtn = document.createElement('input');
+                            radioBtn.setAttribute('type', 'radio');
+                            radioBtn.setAttribute('name', 'answer');
+                            radioBtn.setAttribute('value', option);
+                            radioBtn.style.display = 'inline-block';
+                            radioBtn.style.verticalAlign = 'middle';
+                            radioBtn.style.marginRight = '10px'; // Adjust margin as needed
+                            optionsElement.appendChild(radioBtn);
+                            const label = document.createElement('label');
+                            label.textContent = option;
+                            label.style.display = 'inline-block';
+                            label.style.verticalAlign = 'middle';
+                            label.style.marginRight = '20px'; // Adjust margin as needed
+                            optionsElement.appendChild(label);
+                        });
+                    }
+                } else {
+                    calculateDiabetesRisk();
+                }
+            }
+        
+            function nextQuestion() {
+                if (currentQuestionIndex === 6) { // Check if it's the height and weight question
+                    // Check if both height and weight are entered
+                    if (heightInput.value && weightInput.value) {
+                        answers.push(heightInput.value); // Push height
+                        answers.push(weightInput.value); // Push weight
+                        currentQuestionIndex++;
+                        showQuestion();
+                    } else {
+                        alert('Please enter both height and weight.');
+                    }
+                } else {
+                    const selectedOption = document.querySelector('input[name="answer"]:checked');
+                    if (selectedOption) {
+                        answers.push(selectedOption.value);
+                        currentQuestionIndex++;
+                        showQuestion();
+                    } else {
+                        alert('Please select an option.');
+                    }
+                }
+            }
+        
+            function calculateDiabetesRisk() {
+        // Implement your diabetes risk calculation algorithm here based on the answers
+        // For demonstration purposes, let's assume a simple scoring system
+        let riskScore = 0;
+        
+        // Age-based risk
+        const ageIndex = options[0].indexOf(answers[0]);
+        riskScore += ageIndex * 5; // Adjust weight as needed
+
+        // Family history
+        if (answers[2] === 'Yes') {
+            riskScore += 10; // Adjust weight as needed
+        }
+
+        // High blood pressure
+        if (answers[3] === 'Yes') {
+            riskScore += 5; // Adjust weight as needed
+        }
+
+        // Physical activity
+        if (answers[4] === 'No') {
+            riskScore += 5; // Adjust weight as needed
+        }
+
+        // Ethnicity-based risk
+        const ethnicityIndex = options[5].indexOf(answers[5]);
+        riskScore += ethnicityIndex * 3; // Adjust weight as needed
+
+        // Weight-based risk
+        const weightIndex = weightOptions.indexOf(answers[8]); // Assuming weight is at index 8
+        riskScore += weightIndex * 2; // Adjust weight as needed
+
+        // Display the risk score or category
+        const resultContainer = document.getElementById('questionsContainer');
+        resultContainer.innerHTML = `<div style="text-align: center; font-size: 30px; color: #034183; margin-bottom: 20px;">Your Diabetes Risk Score is: ${riskScore}% While this is just an estimate, it's essential to be proactive. Schedule a check-up with your doctor to discuss your risk factors and develop a plan for a healthier lifestyle.</div>`;
+        // You can also categorize the risk based on certain thresholds if needed
+        // Example: if (riskScore >= 20) { resultContainer.innerHTML += 'High Risk'; }
+
+        // Additional logic can be added here for further guidance based on the risk score
+    }
+        </script>
+        
+      </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer" style="width: 1380px;">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+
+                 
+              <div class="col-lg-3 col-md-6 footer-links">
+                  <h4>Useful Links</h4>
+                  <ul>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="#">Home</a></li>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="signup.html">Sign Up</a></li>
+                    <li><i class="ion-ios-arrow-forward"></i> <a href="Login.html">Login</a></li>
+
+
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#portfolio">Portfolio</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#team">Team</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="careers.html">Career</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#contact">Contact</a></li>
+                      <li><i class="ion-ios-arrow-forward"></i> <a href="#faq">FAQ</a></li>
+                  </ul>
+              </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>DROP Dashboard</h4>
+                    <ul>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">User Profiles</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Health Metrics Tracking</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Nutrition and Meal Planning Tools</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Educational Resources</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Community Support</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Appointment Scheduling</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Goal Setting and Tracking</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Integration with Research and Clinical Trials</a></li>
+                        <li><i class="ion-ios-arrow-forward"></i> <a href="#">Assessment Tools</a></li>
+                    </ul>
+                </div>
+
+               
+
+                 
+
+                <div class="col-lg-3 col-md-6 footer-contact" style="font-size: 1.5rem;">
+                    <h4>Contact Us</h4>
+                    <p style="text-transform: none;">
+                      Diabetes Remission And Obesity Prevention(DROP)<br>
+                      P.O. Box 1900-00502<br>
+                      Karen, Nairobi<br>
+                      Kenya<br>
+                        <strong>Phone:</strong> +254721496316<br>
+                        <strong>Email:</strong> info.dropke@gmail.com<br>
+                    </p>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/"><i class="ion-logo-facebook"></i></a>
+                        <a href="https://twitter.com/login?lang=en"><i class="ion-logo-twitter"></i></a>
+                        <a href="https://www.linkedin.com/"><i class="ion-logo-linkedin"></i></a>
+                        <a href="https://www.instagram.com/"><i class="ion-logo-instagram"></i></a>
+                        <a href="https://accounts.google.com/servicelogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="ion-logo-googleplus"></i></a>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-newsletter">
+                    <h4>Subscription</h4>
+                    <p style="text-transform: none;">Stay Informed, Stay Empowered: Subscribe to Our Newsletter!Join our community committed to diabetes remission and obesity prevention.</p>
+                    <p style="text-transform: none;">By subscribing to our newsletter, you'll receive regular updates on our latest programs, research findings, healthy living tips, and inspiring stories from individuals like you who are making positive changes in their lives.</p>
+                    <form action="" method="post">
+                        <input type="email" name="email"><input type="submit"  value="Subscribe">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 copyright" style="color: #fff; font-size: 1.3rem;">
+                Copyright &copy; 2024 Diabetes Remission and Obesity Prevention – DROP organization Website. All Rights Reserved.
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="back-to-top"><i class="ion-ios-arrow-up"></i></a>
+</body>
+</html>
